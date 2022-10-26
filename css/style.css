@@ -1,3 +1,14 @@
 p {
     color: red;
 }
+
+.buttonHovered{
+
+    background-color: blue;
+    color: white
+
+}
+
+input[type=text]:focus{
+    border: blue;
+}

@@ -29,23 +29,36 @@ const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather?q='
 
 // Event listeners
 
+
+    // listen for mouseover on button and change appearence
+    submitButton.hover(()=> {
+        submitButton.toggleClass('buttonHovered')
+    }, ()=> {
+        submitButton.toggleClass('buttonHovered')
+    })
+
     // set an event on submit button on form, that grans value of input and console logs it
     submitButton.click((event)=>{
         
         // prevent page refresh default behavior
             event.preventDefault()
         
+       
+
         // grab searched city name value
             let searchedCity = cityInput.val()
 
         
         handleGetData(searchedCity)
 
-        
-        console.log('submit clicked')
+            
+        // clear the input
+        cityInput.val('')
 
 
     })
+
+
 // Functions
 
 
@@ -82,10 +95,10 @@ function  handleGetData (city){
                 descElement.html(weather)
             console.log(weather)
 
+         
         })          
         .catch((error)=> {console.log(error)})    
 
 
 }
 
-// handleGetData('london')
